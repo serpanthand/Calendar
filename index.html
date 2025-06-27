@@ -24,309 +24,112 @@
         }
 
         /* Palettes from the image */
-        .theme-hollow {
-            --accent-color: #E54B4B; /* Red-Orange */
-            --accent-secondary: #2A2A2A;
-            --glow-color: var(--accent-color);
-            --event-dot-color: var(--accent-color);
-        }
-        .theme-thinking {
-            --accent-color: #4A90E2; /* Blue */
-            --accent-secondary: #D9538A; /* Pink */
-            --glow-color: var(--accent-color);
-            --event-dot-color: var(--accent-secondary);
-        }
-        .theme-fantasy {
-            --accent-color: #FF6B6B; /* Pink */
-            --accent-secondary: #A8DADC; /* Mint */
-            --glow-color: var(--accent-color);
-            --event-dot-color: var(--accent-secondary);
-        }
-        .theme-lazy {
-            --bg-main: #2C3E50;
-            --glass-bg: rgba(44, 62, 80, 0.5);
-            --accent-color: #58D68D; /* Green */
-            --accent-secondary: #F39C12; /* Orange */
-            --glow-color: var(--accent-color);
-            --event-dot-color: var(--accent-secondary);
-        }
-        .theme-fruit-juice {
-            --accent-color: #F58A07; /* Orange */
-            --accent-secondary: #C73E1D; /* Deep Pink */
-            --glow-color: var(--accent-color);
-            --event-dot-color: var(--accent-secondary);
-        }
-        .theme-hero {
-            --accent-color: #CF1B1B; /* Strong Red */
-            --accent-secondary: #F8F4F0; /* Cream */
-            --glow-color: var(--accent-color);
-            --event-dot-color: var(--accent-secondary);
-        }
-        .theme-intelligence {
-            --bg-main: #0D2149;
-            --glass-bg: rgba(13, 33, 73, 0.5);
-            --accent-color: #40C9A2; /* Cyan */
-            --accent-secondary: #F58A07; /* Orange */
-            --glow-color: var(--accent-color);
-            --event-dot-color: var(--accent-secondary);
-        }
+        .theme-hollow { --accent-color: #E54B4B; --accent-secondary: #2A2A2A; --glow-color: var(--accent-color); --event-dot-color: var(--accent-color); }
+        .theme-thinking { --accent-color: #4A90E2; --accent-secondary: #D9538A; --glow-color: var(--accent-color); --event-dot-color: var(--accent-secondary); }
+        .theme-fantasy { --accent-color: #FF6B6B; --accent-secondary: #A8DADC; --glow-color: var(--accent-color); --event-dot-color: var(--accent-secondary); }
+        .theme-lazy { --bg-main: #2C3E50; --glass-bg: rgba(44, 62, 80, 0.5); --accent-color: #58D68D; --accent-secondary: #F39C12; --glow-color: var(--accent-color); --event-dot-color: var(--accent-secondary); }
+        .theme-fruit-juice { --accent-color: #F58A07; --accent-secondary: #C73E1D; --glow-color: var(--accent-color); --event-dot-color: var(--accent-secondary); }
+        .theme-hero { --accent-color: #CF1B1B; --accent-secondary: #F8F4F0; --glow-color: var(--accent-color); --event-dot-color: var(--accent-secondary); }
+        .theme-intelligence { --bg-main: #0D2149; --glass-bg: rgba(13, 33, 73, 0.5); --accent-color: #40C9A2; --accent-secondary: #F58A07; --glow-color: var(--accent-color); --event-dot-color: var(--accent-secondary); }
 
         @keyframes move-glow {
-            0% { transform: translate(10%, 10%) rotate(0deg); }
-            25% { transform: translate(-10%, 10%) rotate(90deg); }
-            50% { transform: translate(-10%, -10%) rotate(180deg); }
-            75% { transform: translate(10%, -10%) rotate(270deg); }
-            100% { transform: translate(10%, 10%) rotate(360deg); }
+            0% { transform: translate(10%, 10%) rotate(0deg); } 25% { transform: translate(-10%, 10%) rotate(90deg); } 50% { transform: translate(-10%, -10%) rotate(180deg); } 75% { transform: translate(10%, -10%) rotate(270deg); } 100% { transform: translate(10%, 10%) rotate(360deg); }
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-deep);
-            color: var(--text-primary);
-            display: grid;
-            place-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-            overflow: hidden;
-            position: relative;
+            font-family: 'Poppins', sans-serif; background-color: var(--bg-deep); color: var(--text-primary);
+            display: grid; place-items: center; min-height: 100vh; margin: 0; padding: 20px;
+            box-sizing: border-box; overflow: hidden; position: relative;
         }
         
         .background-animation::before {
-            content: '';
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            width: 150vmax;
-            height: 150vmax;
-            background-image: radial-gradient(circle, var(--accent-color), transparent 40%);
-            opacity: 0.15;
-            z-index: -1;
-            transform-origin: center center;
-            animation: move-glow 45s linear infinite;
+            content: ''; position: fixed; top: 50%; left: 50%; width: 150vmax; height: 150vmax;
+            background-image: radial-gradient(circle, var(--accent-color), transparent 40%); opacity: 0.15;
+            z-index: -1; transform-origin: center center; animation: move-glow 45s linear infinite;
         }
 
         /* --- 2. Calendar Container --- */
         .calendar-container {
-            width: 100%;
-            max-width: 450px;
-            background-color: var(--bg-main);
-            border-radius: 24px;
+            width: 100%; max-width: 480px; background-color: var(--bg-main); border-radius: 24px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--border-color);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.5s ease;
+            overflow: hidden; display: flex; flex-direction: column; transition: all 0.5s ease;
         }
         
         /* --- 3. Header & Navigation (Glassmorphism) --- */
         .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 25px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            display: flex; justify-content: space-between; align-items: center; padding: 20px 25px;
+            background: var(--glass-bg); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
         }
-
-        .header .nav-arrow {
-            font-size: 24px;
-            cursor: pointer;
-            color: var(--text-secondary);
-            transition: all 0.3s;
-            padding: 8px;
-            border-radius: 50%;
-            line-height: 1;
-        }
-        
-        .header .nav-arrow:hover {
-            color: var(--text-primary);
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .month-year {
-            font-size: 20px;
-            font-weight: 600;
-            text-align: center;
-            text-shadow: 0 0 12px var(--glow-color);
-            transition: text-shadow 0.5s ease;
-        }
-
-        .month-year span {
-            display: block;
-            font-size: 14px;
-            font-weight: 400;
-            color: var(--text-secondary);
-            text-shadow: none;
-        }
+        .header .nav-arrow { font-size: 24px; cursor: pointer; color: var(--text-secondary); transition: all 0.3s; padding: 8px; border-radius: 50%; line-height: 1; }
+        .header .nav-arrow:hover { color: var(--text-primary); background-color: rgba(255, 255, 255, 0.1); }
+        .month-year { font-size: 20px; font-weight: 600; text-align: center; text-shadow: 0 0 12px var(--glow-color); transition: text-shadow 0.5s ease; }
+        .month-year span { display: block; font-size: 14px; font-weight: 400; color: var(--text-secondary); text-shadow: none; }
 
         /* --- 4. Calendar Grid --- */
-        .calendar-body {
-            padding: 20px;
-        }
-        .weekdays {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--text-secondary);
-            padding-bottom: 15px;
-        }
+        .calendar-body { padding: 20px; }
+        .weekdays { display: grid; grid-template-columns: repeat(7, 1fr); font-size: 13px; font-weight: 500; color: var(--text-secondary); padding-bottom: 15px; }
         .weekdays div { text-align: center; }
-
-        .days-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 8px;
-        }
-
-        .day {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 42px;
-            cursor: pointer;
-            border-radius: 50%;
-            font-size: 15px;
-            position: relative;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            border: 1px solid transparent;
-        }
-
-        .day.other-month {
-            color: var(--text-secondary);
-            opacity: 0.4;
-        }
-
-        .day:not(.other-month):hover {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-color: var(--border-color);
-        }
-
-        .day.today {
-            border: 1px solid var(--accent-color);
-            box-shadow: 0 0 10px -2px var(--glow-color);
-            color: var(--accent-color);
-            font-weight: 600;
-        }
-
-        .day.selected {
-            background-color: var(--accent-color);
-            color: var(--bg-deep);
-            font-weight: 700;
-            box-shadow: 0 0 20px var(--glow-color), 0 4px 10px rgba(0,0,0,0.3);
-            transform: scale(1.1);
-        }
-        
-        .day .event-dot {
-            position: absolute;
-            bottom: 6px;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background-color: var(--event-dot-color);
-        }
+        .days-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+        .day { display: flex; justify-content: center; align-items: center; height: 42px; cursor: pointer; border-radius: 50%; font-size: 15px; position: relative; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); border: 1px solid transparent; }
+        .day.other-month { color: var(--text-secondary); opacity: 0.4; }
+        .day:not(.other-month):hover { background-color: rgba(255, 255, 255, 0.05); border-color: var(--border-color); }
+        .day.today { border: 1px solid var(--accent-color); box-shadow: 0 0 10px -2px var(--glow-color); color: var(--accent-color); font-weight: 600; }
+        .day.selected { background-color: var(--accent-color); color: var(--bg-deep); font-weight: 700; box-shadow: 0 0 20px var(--glow-color), 0 4px 10px rgba(0,0,0,0.3); transform: scale(1.1); }
+        .day .event-dot { position: absolute; bottom: 6px; width: 6px; height: 6px; border-radius: 50%; background-color: var(--event-dot-color); }
         .day.selected .event-dot { background-color: var(--bg-deep); }
 
         /* --- 5. Week View --- */
-        .week-view {
-            border-top: 1px solid var(--border-color);
-            padding: 20px 25px;
-            min-height: 120px;
-        }
+        .week-view { border-top: 1px solid var(--border-color); padding: 20px 25px; }
         .week-view-header { margin-bottom: 15px; }
-        .week-view-header h3 {
-            font-size: 16px; font-weight: 600; margin: 0;
-            color: var(--text-primary);
-        }
-        .week-view-header span {
-            font-size: 12px; font-weight: 400; color: var(--text-secondary);
-        }
+        .week-view-header h3 { font-size: 16px; font-weight: 600; margin: 0; color: var(--text-primary); }
+        .week-view-header span { font-size: 12px; font-weight: 400; color: var(--text-secondary); }
         
-        #week-events-list {
-            list-style: none; padding: 0; margin: 0; max-height: 100px;
-            overflow-y: auto;
-        }
-        #week-events-list li {
-            font-size: 14px; padding: 8px 5px; display: flex; align-items: center;
-            border-bottom: 1px solid var(--border-color);
-        }
+        #week-events-list { list-style: none; padding: 0; margin: 0; max-height: 80px; overflow-y: auto; }
+        #week-events-list li { font-size: 14px; padding: 8px 5px; display: flex; align-items: center; border-bottom: 1px solid var(--border-color); }
         #week-events-list li:last-child { border-bottom: none; }
-        #week-events-list li strong {
-            font-weight: 500; color: var(--text-secondary); margin-right: 12px; min-width: 65px;
-        }
-        .no-events-message {
-            color: var(--text-secondary); font-style: italic; border: none !important;
-        }
-        /* Custom scrollbar */
-        #week-events-list::-webkit-scrollbar { width: 6px; }
-        #week-events-list::-webkit-scrollbar-track { background: transparent; }
-        #week-events-list::-webkit-scrollbar-thumb { background: var(--text-secondary); border-radius: 3px; }
-        #week-events-list::-webkit-scrollbar-thumb:hover { background: var(--accent-color); }
+        #week-events-list li strong { font-weight: 500; color: var(--text-secondary); margin-right: 12px; min-width: 65px; }
+        .no-events-message { color: var(--text-secondary); font-style: italic; border: none !important; }
 
-
-        /* --- 6. Modal / Popup --- */
-        .modal-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(5px);
-            display: flex; justify-content: center; align-items: center;
-            z-index: 1000;
-            opacity: 0; pointer-events: none;
-            transition: opacity 0.3s ease-in-out;
-        }
-        .modal-overlay.active { opacity: 1; pointer-events: all; }
-        .modal-content {
-            background: var(--bg-main);
-            padding: 30px; border-radius: 16px;
-            width: 90%; max-width: 380px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 0 0 1px var(--border-color);
-            transform: translateY(20px);
-            transition: transform 0.3s ease-in-out;
-        }
-        .modal-overlay.active .modal-content { transform: translateY(0); }
-
-        #modal-date {
-            font-size: 18px; font-weight: 600; color: var(--text-primary);
-            text-align: center; margin-bottom: 25px;
-        }
-
-        .event-input {
-            width: 100%; padding: 12px 15px; border: 1px solid var(--border-color);
-            border-radius: 8px; font-size: 16px;
-            font-family: 'Poppins', sans-serif; margin-bottom: 20px;
-            box-sizing: border-box; background-color: var(--bg-deep); color: var(--text-primary);
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-        .event-input:focus {
-            outline: none; border-color: var(--accent-color);
-            box-shadow: 0 0 8px var(--glow-color);
-        }
-        .modal-actions { display: flex; justify-content: flex-end; gap: 10px; }
-        .modal-button {
-            padding: 10px 20px; border: none; border-radius: 8px; font-size: 14px;
-            font-weight: 500; cursor: pointer; transition: all 0.3s;
-        }
-        .btn-save { background-color: var(--accent-color); color: var(--bg-deep); }
-        .btn-save:hover { filter: brightness(1.2); box-shadow: 0 0 10px var(--glow-color); }
-        .btn-cancel { background-color: transparent; color: var(--text-secondary); }
-        .btn-cancel:hover { background-color: var(--border-color); color: var(--text-primary); }
-        
-        #events-list { list-style: none; padding: 0; margin-top: 20px; }
-        #events-list li {
+        /* Weekly Goals Section styling */
+        .weekly-goals-section { margin-top: 25px; }
+        .weekly-goals-title { font-size: 16px; font-weight: 600; margin: 0 0 15px 0; color: var(--text-primary); }
+        #weekly-goals-list { list-style: none; padding: 0; margin: 0 0 15px 0; }
+        #weekly-goals-list li {
             padding: 10px; background: rgba(255,255,255, 0.05); border-radius: 6px;
             margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;
             font-size: 14px;
         }
-        .delete-event-btn {
-            background: none; border: none; color: var(--text-secondary);
-            cursor: pointer; font-weight: bold; font-size: 18px;
-            transition: color 0.3s;
-        }
-        .delete-event-btn:hover { color: var(--accent-color); }
+        #weekly-goal-form { display: flex; gap: 10px; }
+        #weekly-goal-input { flex-grow: 1; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 14px; font-family: 'Poppins', sans-serif; background-color: var(--bg-deep); color: var(--text-primary); transition: all 0.3s; }
+        #weekly-goal-input:focus { outline: none; border-color: var(--accent-color); box-shadow: 0 0 8px var(--glow-color); }
+        .btn-add-goal { padding: 8px 15px; border: none; border-radius: 6px; font-weight: 500; cursor: pointer; transition: all 0.3s; background-color: var(--accent-color); color: var(--bg-deep); }
+        .btn-add-goal:hover { filter: brightness(1.2); }
+        .delete-btn { background: none; border: none; color: var(--text-secondary); cursor: pointer; font-weight: bold; font-size: 18px; transition: color 0.3s; }
+        .delete-btn:hover { color: var(--accent-color); }
+
+        /* Custom scrollbar */
+        #week-events-list::-webkit-scrollbar, #weekly-goals-list::-webkit-scrollbar { width: 6px; }
+        #week-events-list::-webkit-scrollbar-track, #weekly-goals-list::-webkit-scrollbar-track { background: transparent; }
+        #week-events-list::-webkit-scrollbar-thumb, #weekly-goals-list::-webkit-scrollbar-thumb { background: var(--text-secondary); border-radius: 3px; }
+        #week-events-list::-webkit-scrollbar-thumb:hover, #weekly-goals-list::-webkit-scrollbar-thumb:hover { background: var(--accent-color); }
+
+        /* --- 6. Modal / Popup --- */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); backdrop-filter: blur(5px); display: flex; justify-content: center; align-items: center; z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.3s ease-in-out; }
+        .modal-overlay.active { opacity: 1; pointer-events: all; }
+        .modal-content { background: var(--bg-main); padding: 30px; border-radius: 16px; width: 90%; max-width: 380px; box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 0 0 1px var(--border-color); transform: translateY(20px); transition: transform 0.3s ease-in-out; }
+        .modal-overlay.active .modal-content { transform: translateY(0); }
+        #modal-date { font-size: 18px; font-weight: 600; color: var(--text-primary); text-align: center; margin-bottom: 25px; }
+        .event-input { width: 100%; padding: 12px 15px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 16px; font-family: 'Poppins', sans-serif; margin-bottom: 20px; box-sizing: border-box; background-color: var(--bg-deep); color: var(--text-primary); transition: border-color 0.3s, box-shadow 0.3s; }
+        .event-input:focus { outline: none; border-color: var(--accent-color); box-shadow: 0 0 8px var(--glow-color); }
+        .modal-actions { display: flex; justify-content: flex-end; gap: 10px; }
+        .modal-button { padding: 10px 20px; border: none; border-radius: 8px; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.3s; }
+        .btn-save { background-color: var(--accent-color); color: var(--bg-deep); }
+        .btn-save:hover { filter: brightness(1.2); box-shadow: 0 0 10px var(--glow-color); }
+        .btn-cancel { background-color: transparent; color: var(--text-secondary); }
+        .btn-cancel:hover { background-color: var(--border-color); color: var(--text-primary); }
+        #events-list { list-style: none; padding: 0; margin-top: 20px; }
+        #events-list li { padding: 10px; background: rgba(255,255,255, 0.05); border-radius: 6px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
     </style>
 </head>
 <body>
@@ -347,13 +150,23 @@
         <div class="week-view">
             <div class="week-view-header">
                 <div>
-                    <h3>This Week's Events</h3>
+                    <h3>This Week's Daily Events</h3>
                     <span id="week-range"></span>
                 </div>
             </div>
             <ul id="week-events-list">
-                <li class="no-events-message">No events for this week.</li>
+                <li class="no-events-message">No daily events scheduled for this week.</li>
             </ul>
+
+            <div class="weekly-goals-section">
+                <h4 class="weekly-goals-title">Weekly Goals</h4>
+                <ul id="weekly-goals-list"></ul>
+                <form id="weekly-goal-form">
+                    <input type="text" id="weekly-goal-input" placeholder="Add a goal for the week..." autocomplete="off">
+                    <button type="submit" class="btn-add-goal">Add</button>
+                </form>
+            </div>
+
         </div>
     </div>
 
@@ -361,7 +174,7 @@
         <div class="modal-content">
             <h2 id="modal-date"></h2>
             <form id="event-form">
-                <input type="text" id="event-input" placeholder="Add an event or task..." class="event-input" autocomplete="off">
+                <input type="text" id="event-input" placeholder="Add a daily event or task..." class="event-input" autocomplete="off">
                  <ul id="events-list"></ul>
                 <div class="modal-actions">
                     <button type="button" class="modal-button btn-cancel" id="cancel-btn">Close</button>
@@ -376,58 +189,59 @@
     document.addEventListener('DOMContentLoaded', () => {
 
         // --- 1. STATE & DOM ELEMENTS ---
+        // ... (all previous DOM elements)
+        const weeklyGoalsListEl = document.getElementById('weekly-goals-list');
+        const weeklyGoalForm = document.getElementById('weekly-goal-form');
+        const weeklyGoalInput = document.getElementById('weekly-goal-input');
+        
+        let currentDate = new Date();
+        let selectedDate = null;
+        let events = {}; // For daily events
+        let weeklyGoals = {}; // For weekly goals
+
+        // ... (all other DOM elements from previous code)
         const calendarContainer = document.getElementById('calendar-container');
         const monthYearEl = document.getElementById('month-year');
         const daysGridEl = document.getElementById('days-grid');
         const prevMonthBtn = document.getElementById('prev-month-btn');
         const nextMonthBtn = document.getElementById('next-month-btn');
-        
         const eventModal = document.getElementById('event-modal');
         const modalDateEl = document.getElementById('modal-date');
         const eventForm = document.getElementById('event-form');
         const eventInput = document.getElementById('event-input');
         const cancelBtn = document.getElementById('cancel-btn');
         const eventsListEl = document.getElementById('events-list');
-
         const weekRangeEl = document.getElementById('week-range');
         const weekEventsListEl = document.getElementById('week-events-list');
 
-        let currentDate = new Date();
-        let selectedDate = null;
-        let events = {}; // Format: { 'YYYY-MM-DD': ['Event 1', 'Event 2'] }
-
         // --- 2. DAILY THEME CHANGER ---
         function setDailyTheme() {
-            const themes = [
-                'theme-hollow', 
-                'theme-thinking', 
-                'theme-fantasy', 
-                'theme-lazy', 
-                'theme-fruit-juice', 
-                'theme-hero', 
-                'theme-intelligence'
-            ];
+            const themes = [ 'theme-hollow', 'theme-thinking', 'theme-fantasy', 'theme-lazy', 'theme-fruit-juice', 'theme-hero', 'theme-intelligence' ];
             const today = new Date();
             const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
             const themeClass = themes[dayOfYear % themes.length];
-            
-            calendarContainer.className = 'calendar-container'; // Reset classes
+            calendarContainer.className = 'calendar-container';
             calendarContainer.classList.add(themeClass);
         }
 
         // --- 3. DATA PERSISTENCE (LOCAL STORAGE) ---
-        function loadEvents() {
+        function loadData() {
             const savedEvents = localStorage.getItem('calendarEvents');
-            if (savedEvents) {
-                events = JSON.parse(savedEvents);
-            }
+            if (savedEvents) events = JSON.parse(savedEvents);
+            
+            const savedWeeklyGoals = localStorage.getItem('calendarWeeklyGoals');
+            if(savedWeeklyGoals) weeklyGoals = JSON.parse(savedWeeklyGoals);
         }
 
         function saveEvents() {
             localStorage.setItem('calendarEvents', JSON.stringify(events));
         }
 
-        // --- 4. CORE CALENDAR LOGIC ---
+        function saveWeeklyGoals() {
+            localStorage.setItem('calendarWeeklyGoals', JSON.stringify(weeklyGoals));
+        }
+
+        // --- 4. CORE CALENDAR LOGIC (renderCalendar remains unchanged) ---
         function renderCalendar() {
             daysGridEl.innerHTML = '';
             const year = currentDate.getFullYear();
@@ -442,7 +256,6 @@
             const lastDateOfMonth = new Date(year, month + 1, 0).getDate();
             const lastDateOfPrevMonth = new Date(year, month, 0).getDate();
 
-            // Previous month's days
             for (let i = firstDayOfMonth; i > 0; i--) {
                 const dayEl = document.createElement('div');
                 dayEl.classList.add('day', 'other-month');
@@ -450,37 +263,27 @@
                 daysGridEl.appendChild(dayEl);
             }
 
-            // Current month's days
             for (let i = 1; i <= lastDateOfMonth; i++) {
                 const dayEl = document.createElement('div');
                 dayEl.classList.add('day');
                 dayEl.textContent = i;
-                
                 const dayDate = new Date(year, month, i);
                 const dateStr = formatDate(dayDate);
-
-                if (isSameDay(dayDate, new Date())) {
-                    dayEl.classList.add('today');
-                }
-                if (selectedDate && isSameDay(dayDate, selectedDate)) {
-                    dayEl.classList.add('selected');
-                }
+                if (isSameDay(dayDate, new Date())) dayEl.classList.add('today');
+                if (selectedDate && isSameDay(dayDate, selectedDate)) dayEl.classList.add('selected');
                 if (events[dateStr] && events[dateStr].length > 0) {
                     const eventDot = document.createElement('div');
                     eventDot.classList.add('event-dot');
                     dayEl.appendChild(eventDot);
                 }
-
                 dayEl.addEventListener('click', () => {
                     selectedDate = dayDate;
                     openModal(dayDate);
                     renderCalendar();
                 });
-
                 daysGridEl.appendChild(dayEl);
             }
             
-            // Next month's days
             const totalDays = daysGridEl.children.length;
             const nextDays = (7 - (totalDays % 7)) % 7;
             for (let i = 1; i <= nextDays; i++) {
@@ -489,12 +292,12 @@
                  dayEl.textContent = i;
                  daysGridEl.appendChild(dayEl);
             }
-            
             renderWeekView();
         }
         
-        // --- 5. WEEK VIEW LOGIC ---
+        // --- 5. WEEK VIEW LOGIC (UPDATED) ---
         function renderWeekView() {
+            // Part 1: Render Daily Events for the week
             weekEventsListEl.innerHTML = '';
             let dateToUse = selectedDate || new Date();
             const dayOfWeek = dateToUse.getDay();
@@ -520,30 +323,52 @@
                     });
                 }
             }
-
             if (!hasEventsThisWeek) {
                  const li = document.createElement('li');
                  li.classList.add('no-events-message');
-                 li.textContent = 'No events scheduled for this week.';
+                 li.textContent = 'No daily events for this week.';
                  weekEventsListEl.appendChild(li);
+            }
+
+            // Part 2: Render Weekly Goals
+            weeklyGoalsListEl.innerHTML = '';
+            const weekKey = getWeekKey(dateToUse);
+            const goalsForWeek = weeklyGoals[weekKey] || [];
+            
+            if (goalsForWeek.length > 0) {
+                goalsForWeek.forEach((goalText, index) => {
+                    const li = document.createElement('li');
+                    const textSpan = document.createElement('span');
+                    textSpan.textContent = escapeHTML(goalText);
+                    li.appendChild(textSpan);
+                    
+                    const deleteBtn = document.createElement('button');
+                    deleteBtn.innerHTML = '×';
+                    deleteBtn.className = 'delete-btn';
+                    deleteBtn.onclick = () => deleteWeeklyGoal(weekKey, index);
+                    li.appendChild(deleteBtn);
+                    weeklyGoalsListEl.appendChild(li);
+                });
+            } else {
+                const li = document.createElement('li');
+                li.classList.add('no-events-message');
+                li.style.background = 'transparent'; // Override li style
+                li.textContent = 'No goals set for this week.';
+                weeklyGoalsListEl.appendChild(li);
             }
         }
         
-        // --- 6. MODAL LOGIC ---
+        // --- 6. MODAL LOGIC (for daily events, mostly unchanged) ---
         function openModal(date) {
             selectedDate = date;
-            modalDateEl.textContent = date.toLocaleDateString('en-US', {
-                weekday: 'long', month: 'long', day: 'numeric', year: 'numeric'
-            });
+            modalDateEl.textContent = date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
             eventInput.value = '';
             renderEventsForModal();
             eventModal.classList.add('active');
             eventInput.focus();
         }
 
-        function closeModal() {
-            eventModal.classList.remove('active');
-        }
+        function closeModal() { eventModal.classList.remove('active'); }
         
         function renderEventsForModal() {
             eventsListEl.innerHTML = '';
@@ -553,11 +378,9 @@
                     const li = document.createElement('li');
                     li.textContent = escapeHTML(eventText);
                     const deleteBtn = document.createElement('button');
-                    deleteBtn.textContent = '×';
-                    deleteBtn.classList.add('delete-event-btn');
-                    deleteBtn.addEventListener('click', () => {
-                        deleteEvent(dateStr, index);
-                    });
+                    deleteBtn.innerHTML = '×';
+                    deleteBtn.className = 'delete-btn';
+                    deleteBtn.onclick = () => deleteEvent(dateStr, index);
                     li.appendChild(deleteBtn);
                     eventsListEl.appendChild(li);
                 });
@@ -569,9 +392,7 @@
             const eventText = eventInput.value.trim();
             if (eventText && selectedDate) {
                 const dateStr = formatDate(selectedDate);
-                if (!events[dateStr]) {
-                    events[dateStr] = [];
-                }
+                if (!events[dateStr]) events[dateStr] = [];
                 events[dateStr].push(eventText);
                 saveEvents();
                 eventInput.value = '';
@@ -582,50 +403,68 @@
 
         function deleteEvent(dateStr, index) {
             events[dateStr].splice(index, 1);
-            if(events[dateStr].length === 0) {
-                delete events[dateStr];
-            }
+            if(events[dateStr].length === 0) delete events[dateStr];
             saveEvents();
             renderEventsForModal();
             renderCalendar();
         }
-
-        // --- 7. EVENT LISTENERS ---
-        prevMonthBtn.addEventListener('click', () => {
-            currentDate.setMonth(currentDate.getMonth() - 1);
-            renderCalendar();
-        });
-        nextMonthBtn.addEventListener('click', () => {
-            currentDate.setMonth(currentDate.getMonth() + 1);
-            renderCalendar();
-        });
         
-        eventForm.addEventListener('submit', addEvent);
-        cancelBtn.addEventListener('click', closeModal);
-        eventModal.addEventListener('click', (e) => {
-            if (e.target === eventModal) closeModal();
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && eventModal.classList.contains('active')) {
-                closeModal();
+        // --- 7. WEEKLY GOAL FUNCTIONS (NEW) ---
+        function addWeeklyGoal(e) {
+            e.preventDefault();
+            const goalText = weeklyGoalInput.value.trim();
+            if (goalText) {
+                const dateToUse = selectedDate || new Date();
+                const weekKey = getWeekKey(dateToUse);
+                if (!weeklyGoals[weekKey]) {
+                    weeklyGoals[weekKey] = [];
+                }
+                weeklyGoals[weekKey].push(goalText);
+                saveWeeklyGoals();
+                weeklyGoalInput.value = '';
+                renderWeekView(); // Re-render the entire week view to show the new goal
             }
-        });
+        }
 
-        // --- 8. UTILITY FUNCTIONS ---
+        function deleteWeeklyGoal(weekKey, index) {
+            weeklyGoals[weekKey].splice(index, 1);
+            if (weeklyGoals[weekKey].length === 0) {
+                delete weeklyGoals[weekKey];
+            }
+            saveWeeklyGoals();
+            renderWeekView();
+        }
+
+
+        // --- 8. EVENT LISTENERS ---
+        prevMonthBtn.addEventListener('click', () => { currentDate.setMonth(currentDate.getMonth() - 1); renderCalendar(); });
+        nextMonthBtn.addEventListener('click', () => { currentDate.setMonth(currentDate.getMonth() + 1); renderCalendar(); });
+        eventForm.addEventListener('submit', addEvent);
+        weeklyGoalForm.addEventListener('submit', addWeeklyGoal); // New listener
+        cancelBtn.addEventListener('click', closeModal);
+        eventModal.addEventListener('click', (e) => { if (e.target === eventModal) closeModal(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && eventModal.classList.contains('active')) closeModal(); });
+
+        // --- 9. UTILITY FUNCTIONS ---
         const isSameDay = (d1, d2) => d1.getFullYear() === d2.getFullYear() && d1.getMonth() === d2.getMonth() && d1.getDate() === d2.getDate();
         const formatDate = (d) => `${d.getFullYear()}-${(d.getMonth() + 1).toString().padStart(2, '0')}-${d.getDate().toString().padStart(2, '0')}`;
         const formatShort = (d) => d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
         const formatDay = (d) => d.toLocaleDateString('en-US', { weekday: 'short' });
-        const escapeHTML = (str) => {
-            const div = document.createElement('div');
-            div.appendChild(document.createTextNode(str));
-            return div.innerHTML;
+        const escapeHTML = (str) => { const div = document.createElement('div'); div.appendChild(document.createTextNode(str)); return div.innerHTML; }
+        
+        function getWeekKey(d) {
+            const date = new Date(d.getTime());
+            date.setHours(0, 0, 0, 0);
+            date.setDate(date.getDate() + 3 - (date.getDay() + 6) % 7);
+            const week1 = new Date(date.getFullYear(), 0, 4);
+            const weekNumber = 1 + Math.round(((date.getTime() - week1.getTime()) / 86400000 - 3 + (week1.getDay() + 6) % 7) / 7);
+            return `${date.getFullYear()}-W${weekNumber.toString().padStart(2, '0')}`;
         }
 
-        // --- 9. INITIALIZATION ---
+        // --- 10. INITIALIZATION ---
         function init() {
             setDailyTheme();
-            loadEvents();
+            loadData(); // Loads both daily and weekly data
             renderCalendar();
         }
         init();
